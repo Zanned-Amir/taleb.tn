@@ -1,0 +1,47 @@
+{
+  "welcome": {
+    "title": "Bienvenue sur Taleb.tn",
+    "greeting": "Bonjour {username}!",
+    "message": "Merci de rejoindre notre communauté. Nous sommes ravis de vous aider à trouver le partenaire d'études parfait.",
+    "cta": "Commencer",
+    "footer": "Si vous avez des questions, veuillez nous contacter à support@taleb.tn"
+  },
+  "verification": {
+    "title": "Vérifiez votre adresse e-mail",
+    "greeting": "Bonjour {username}!",
+    "message": "Veuillez vérifier votre adresse e-mail en cliquant sur le lien ci-dessous:",
+    "cta": "Vérifier l'e-mail",
+    "expiry": "Ce lien expire dans 24 heures.",
+    "footer": "Si vous n'avez pas demandé cela, veuillez ignorer cet e-mail."
+  },
+  "password_reset": {
+    "title": "Réinitialiser votre mot de passe",
+    "greeting": "Bonjour {username}!",
+    "message": "Nous avons reçu une demande de réinitialisation de votre mot de passe. Cliquez sur le lien ci-dessous pour créer un nouveau mot de passe:",
+    "cta": "Réinitialiser le mot de passe",
+    "expiry": "Ce lien expire dans 1 heure.",
+    "footer": "Si vous n'avez pas demandé cela, veuillez ignorer cet e-mail et votre mot de passe restera inchangé."
+  },
+  "password_changed": {
+    "title": "Mot de passe modifié",
+    "greeting": "Bonjour {username}!",
+    "message": "Votre mot de passe a été modifié avec succès.",
+    "note": "Si vous n'avez pas effectué cette modification, veuillez réinitialiser votre mot de passe immédiatement.",
+    "cta": "Gérer le compte",
+    "footer": "Pour votre sécurité, ne partagez jamais votre mot de passe avec quiconque."
+  },
+  "study_partner_match": {
+    "title": "Nouvelle correspondance de partenaire d'études!",
+    "greeting": "Bonjour {username}!",
+    "message": "Bonne nouvelle! Nous avons trouvé une correspondance de partenaire d'études pour vous.",
+    "partner_name": "Partenaire: {partnerName}",
+    "common_interests": "Intérêts communs: {interests}",
+    "match": "Correspondance",
+    "cta": "Voir la correspondance",
+    "footer": "Continuez à étudier et à vous améliorer!"
+  },
+  "common": {
+    "unsubscribe": "Se désabonner des e-mails",
+    "copyright": "© 2026 Taleb.tn. Tous les droits réservés."
+  }
+}

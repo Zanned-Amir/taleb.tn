@@ -1,0 +1,72 @@
+<html lang='{{lang}}'>
+  <head>
+    <meta charset='UTF-8' />
+    <meta name='viewport' content='width=device-width, initial-scale=1.0' />
+    <title>{{t 'email.verification.title'}}</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        line-height: 1.6;
+        color: #333;
+      }
+      .container {
+        max-width: 600px;
+        margin: 0 auto;
+        padding: 20px;
+      }
+      .header {
+        background-color: #28a745;
+        color: white;
+        padding: 20px;
+        text-align: center;
+      }
+      .content {
+        padding: 20px;
+        border: 1px solid #ddd;
+      }
+      .button {
+        background-color: #28a745;
+        color: white;
+        padding: 12px 30px;
+        text-decoration: none;
+        border-radius: 5px;
+        display: inline-block;
+        margin: 20px 0;
+      }
+      .footer {
+        text-align: center;
+        padding: 20px;
+        font-size: 12px;
+        color: #666;
+        border-top: 1px solid #ddd;
+      }
+      .warning {
+        background-color: #fff3cd;
+        padding: 10px;
+        border-radius: 5px;
+        margin: 10px 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div class='container'>
+      <div class='header'>
+        <h1>{{t 'email.verification.title'}}</h1>
+      </div>
+      <div class='content'>
+        <p>{{t 'email.verification.greeting' username=username}}</p>
+        <p>{{t 'email.verification.message'}}</p>
+        <a href='{{verificationLink}}' class='button'>{{t
+            'email.verification.cta'
+          }}</a>
+        <div class='warning'>
+          <strong>{{t 'email.verification.expiry'}}</strong>
+        </div>
+      </div>
+      <div class='footer'>
+        <p>{{t 'email.verification.footer'}}</p>
+        <p>{{t 'email.common.copyright'}}</p>
+      </div>
+    </div>
+  </body>
+</html>

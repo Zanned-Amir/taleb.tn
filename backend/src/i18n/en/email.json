@@ -1,0 +1,47 @@
+{
+  "welcome": {
+    "title": "Welcome to Taleb.tn",
+    "greeting": "Hello {{username}}!",
+    "message": "Thank you for joining our community. We're excited to help you find the perfect study partner.",
+    "cta": "Get Started",
+    "footer": "If you have any questions, please contact us at support@taleb.tn"
+  },
+  "verification": {
+    "title": "Verify Your Email",
+    "greeting": "Hello {username}!",
+    "message": "Please verify your email address by clicking the link below:",
+    "cta": "Verify Email",
+    "expiry": "This link expires in 24 hours.",
+    "footer": "If you didn't request this, please ignore this email."
+  },
+  "password_reset": {
+    "title": "Reset Your Password",
+    "greeting": "Hello {username}!",
+    "message": "We received a request to reset your password. Click the link below to create a new password:",
+    "cta": "Reset Password",
+    "expiry": "This link expires in 1 hour.",
+    "footer": "If you didn't request this, please ignore this email and your password will remain unchanged."
+  },
+  "password_changed": {
+    "title": "Password Changed",
+    "greeting": "Hello {username}!",
+    "message": "Your password has been successfully changed.",
+    "note": "If you didn't make this change, please reset your password immediately.",
+    "cta": "Manage Account",
+    "footer": "For security, never share your password with anyone."
+  },
+  "study_partner_match": {
+    "title": "New Study Partner Match!",
+    "greeting": "Hello {username}!",
+    "message": "Great news! We found a study partner match for you.",
+    "partner_name": "Partner: {partnerName}",
+    "common_interests": "Common Interests: {interests}",
+    "match": "Match",
+    "cta": "View Match",
+    "footer": "Keep studying and improving!"
+  },
+  "common": {
+    "unsubscribe": "Unsubscribe from emails",
+    "copyright": "© 2026 Taleb.tn. All rights reserved."
+  }
+}
