@@ -37,20 +37,74 @@ export type I18nTranslations = {
             "cta": string;
             "footer": string;
         };
-        "study_partner_match": {
+        "verification_otp": {
             "title": string;
             "greeting": string;
             "message": string;
-            "partner_name": string;
-            "common_interests": string;
-            "match": string;
-            "cta": string;
-            "footer": string;
+            "important": string;
+            "warning": string;
+            "expiry": string;
+            "questions": string;
+        };
+        "password_reset_otp": {
+            "title": string;
+            "greeting": string;
+            "message": string;
+            "important": string;
+            "warning": string;
+            "expiry": string;
+            "questions": string;
+        };
+        "change_email": {
+            "title": string;
+            "greeting": string;
+            "message": string;
+            "new_email": string;
+            "confirmation_required": string;
+            "confirm_button": string;
+            "warning": string;
+            "link_expiration": string;
+            "no_action_required": string;
+        };
+        "email_changed": {
+            "title": string;
+            "greeting": string;
+            "success_message": string;
+            "confirmation_complete": string;
+            "details": string;
+            "previous_email": string;
+            "new_email": string;
+            "date": string;
+            "security_note": string;
+            "security_message": string;
+            "view_account": string;
+            "questions_contact": string;
+            "support": string;
+        };
+        "m2fa_otp": {
+            "title": string;
+            "greeting": string;
+            "message": string;
+            "expires_in": string;
+            "minutes": string;
+            "do_not_share": string;
+            "warning_message": string;
+            "alternative_method": string;
+            "security_alert": string;
+            "security_message": string;
+            "questions_contact": string;
+            "support": string;
+        };
+        "footer": {
+            "regards": string;
+            "team": string;
         };
         "common": {
             "unsubscribe": string;
             "copyright": string;
         };
+        "footer_text": string;
+        "all_rights_reserved": string;
     };
 };
 /* prettier-ignore */

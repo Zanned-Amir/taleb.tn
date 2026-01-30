@@ -84,14 +84,17 @@ export class EmailService {
     return nodemailer.createTransport({
       host: this.currentConfig.host,
       port: this.currentConfig.port,
-      secure: false,
+      secure: this.currentConfig.secure,
       tls: {
         rejectUnauthorized: false,
       },
-      auth: {
-        user: this.currentConfig.auth.user,
-        pass: this.currentConfig.auth.pass,
-      },
+
+      auth: this.configService.getOrThrow<boolean>('EMAIL_AUTH_ENABLED')
+        ? {
+            user: this.currentConfig.auth.user,
+            pass: this.currentConfig.auth.pass,
+          }
+        : undefined,
     });
   }
 

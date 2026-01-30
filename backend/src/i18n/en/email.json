@@ -1,7 +1,7 @@
 {
   "welcome": {
     "title": "Welcome to Taleb.tn",
-    "greeting": "Hello {{username}}!",
+    "greeting": "Hello {username}!",
     "message": "Thank you for joining our community. We're excited to help you find the perfect study partner.",
     "cta": "Get Started",
     "footer": "If you have any questions, please contact us at support@taleb.tn"
@@ -30,18 +30,72 @@
     "cta": "Manage Account",
     "footer": "For security, never share your password with anyone."
   },
-  "study_partner_match": {
-    "title": "New Study Partner Match!",
+  "verification_otp": {
+    "title": "Verify Your Email",
     "greeting": "Hello {username}!",
-    "message": "Great news! We found a study partner match for you.",
-    "partner_name": "Partner: {partnerName}",
-    "common_interests": "Common Interests: {interests}",
-    "match": "Match",
-    "cta": "View Match",
-    "footer": "Keep studying and improving!"
+    "message": "Please use the code below to verify your email address:",
+    "important": "Important",
+    "warning": "Do not share this code with anyone. We will never ask for this code.",
+    "expiry": "Code expires in",
+    "questions": "If you didn't request this verification, please ignore this email."
+  },
+  "password_reset_otp": {
+    "title": "Reset Your Password",
+    "greeting": "Hello {username}!",
+    "message": "We received a request to reset your password. Use the code below to create a new password:",
+    "important": "Important",
+    "warning": "Do not share this code with anyone. We will never ask for this code.",
+    "expiry": "Code expires in",
+    "questions": "If you didn't request this, please ignore this email and your password will remain unchanged."
+  },
+  "change_email": {
+    "title": "Confirm Your Email Change",
+    "greeting": "Hello",
+    "message": "You have requested to change your email address. Please confirm this action by clicking the link below.",
+    "new_email": "New Email Address",
+    "confirmation_required": "Click the button below to confirm your new email address:",
+    "confirm_button": "Confirm Email Change",
+    "warning": "Important",
+    "link_expiration": "This confirmation link expires in 24 hours.",
+    "no_action_required": "If you didn't request this change, please ignore this email and your email address will remain unchanged."
+  },
+  "email_changed": {
+    "title": "Email Successfully Changed",
+    "greeting": "Hello",
+    "success_message": "Success! Your email address has been successfully changed.",
+    "confirmation_complete": "Your email change request has been completed and verified.",
+    "details": "Change Details",
+    "previous_email": "Previous Email",
+    "new_email": "New Email Address",
+    "date": "Changed On",
+    "security_note": "Security Note: ",
+    "security_message": "If you did not make this change, please contact our support team immediately.",
+    "view_account": "View Account Settings",
+    "questions_contact": "If you have any questions, please contact our",
+    "support": "support team"
+  },
+  "m2fa_otp": {
+    "title": "Your Two-Factor Authentication Code",
+    "greeting": "Hello",
+    "message": "You have requested a two-factor authentication code. Use the code below to verify your identity:",
+    "expires_in": "Expires in",
+    "minutes": "minutes",
+    "do_not_share": "Do Not Share This Code",
+    "warning_message": "This code is for your account security. Never share it with anyone, and we will never ask for this code.",
+    "alternative_method": "If you did not request this code, you can safely ignore this email.",
+    "security_alert": "Security Alert",
+    "security_message": "If this login attempt was not made by you, please change your password immediately.",
+    "questions_contact": "If you have any questions, please contact our",
+    "support": "support team"
+  },
+  "footer": {
+    "regards": "Best regards,",
+    "team": "The Taleb.tn Team"
   },
   "common": {
     "unsubscribe": "Unsubscribe from emails",
-    "copyright": "© 2026 Taleb.tn. All rights reserved."
-  }
+    "copyright": "Taleb.tn. All rights reserved."
+  },
+  "footer_text": "This is an automated message, please do not reply to this email.",
+  "all_rights_reserved": "All rights reserved."
 }

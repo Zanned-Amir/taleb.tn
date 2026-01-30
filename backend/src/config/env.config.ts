@@ -8,6 +8,7 @@ export const validationSchema = Joi.object({
   PORT: Joi.number().default(3000),
   VERSION: Joi.string().default('1.0'),
   APP_NAME: Joi.string().default('Taleb.tn Backend'),
+  FRONTEND_URL: Joi.string().default('http://localhost:3000'),
 
   // Database configuration
   DATABASE_HOST: Joi.string().required(),
@@ -21,6 +22,12 @@ export const validationSchema = Joi.object({
   REDIS_HOST: Joi.string().required(),
   REDIS_PASSWORD: Joi.string().optional(),
   REDIS_DB: Joi.number().default(0),
+
+  // BullMQ configuration (Redis for Queues)
+  BULLMQ_REDIS_PORT: Joi.number().default(6379),
+  BULLMQ_REDIS_HOST: Joi.string().required(),
+  BULLMQ_REDIS_PASSWORD: Joi.string().optional(),
+  BULLMQ_REDIS_DB: Joi.number().default(1),
 
   // JWT configuration
   JWT_SECRET: Joi.string().required(),
@@ -45,6 +52,14 @@ export const validationSchema = Joi.object({
   EMAIL_FROM_TEST: Joi.string().optional(),
   IS_EMAIL_SECURE_TEST: Joi.boolean().default(false),
 
+  EMAIL_AUTH_ENABLED: Joi.boolean().default(true),
   ENABLE_EMAIL_SERVICE: Joi.boolean().default(false),
   ENABLE_DOCUMENTATION: Joi.boolean().default(false),
+
+  // Password policy configuration
+  PASSWORD_MIN_LENGTH: Joi.number().default(8),
+  PASSWORD_REQUIRE_UPPERCASE: Joi.boolean().default(true),
+  PASSWORD_REQUIRE_LOWERCASE: Joi.boolean().default(true),
+  PASSWORD_REQUIRE_NUMBERS: Joi.boolean().default(true),
+  PASSWORD_REQUIRE_SPECIAL_CHARS: Joi.boolean().default(false),
 });

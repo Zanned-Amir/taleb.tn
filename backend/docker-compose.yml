@@ -2,9 +2,9 @@ services:
   database:
     image: postgres:17
     environment:
-      POSTGRES_USER: taleb_user
-      POSTGRES_PASSWORD: taleb_password
-      POSTGRES_DB: taleb_db
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: admin
+      POSTGRES_DB: test_db
     ports:
       - "5432:5432"
     volumes:
@@ -17,6 +17,11 @@ services:
       - redis_data:/data
     ports:
       - "6379:6379"
+  smtp:
+    image: mailhog/mailhog
+    ports:
+      - "1025:1025" # SMTP port
+      - "8025:8025" # Web UI port
 
 volumes:
   db_data:

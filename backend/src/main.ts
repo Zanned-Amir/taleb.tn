@@ -12,6 +12,7 @@ import { apiReference } from '@scalar/nestjs-api-reference';
 import helmet from 'helmet';
 import cookieParser from 'cookie-parser';
 import { ResponseInterceptor } from './common/interceptors/response.interceptores';
+import { AllExceptionsFilter } from './common/filters/all-exceptions.filter';
 declare const module: any;
 
 async function bootstrap() {
@@ -82,6 +83,8 @@ async function bootstrap() {
     );
   }
   app.useGlobalInterceptors(new ResponseInterceptor(configService));
+
+  app.useGlobalFilters(new AllExceptionsFilter(configService));
   app.use(cookieParser());
   app.use(helmet());
 

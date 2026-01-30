@@ -30,18 +30,72 @@
     "cta": "Gérer le compte",
     "footer": "Pour votre sécurité, ne partagez jamais votre mot de passe avec quiconque."
   },
-  "study_partner_match": {
-    "title": "Nouvelle correspondance de partenaire d'études!",
+  "verification_otp": {
+    "title": "Vérifiez votre adresse e-mail",
     "greeting": "Bonjour {username}!",
-    "message": "Bonne nouvelle! Nous avons trouvé une correspondance de partenaire d'études pour vous.",
-    "partner_name": "Partenaire: {partnerName}",
-    "common_interests": "Intérêts communs: {interests}",
-    "match": "Correspondance",
-    "cta": "Voir la correspondance",
-    "footer": "Continuez à étudier et à vous améliorer!"
+    "message": "Veuillez utiliser le code ci-dessous pour vérifier votre adresse e-mail:",
+    "important": "Important",
+    "warning": "Ne partagez pas ce code avec quiconque. Nous ne demanderons jamais ce code.",
+    "expiry": "Le code expire dans",
+    "questions": "Si vous n'avez pas demandé cette vérification, veuillez ignorer cet e-mail."
+  },
+  "password_reset_otp": {
+    "title": "Réinitialiser votre mot de passe",
+    "greeting": "Bonjour {username}!",
+    "message": "Nous avons reçu une demande de réinitialisation de votre mot de passe. Utilisez le code ci-dessous pour créer un nouveau mot de passe:",
+    "important": "Important",
+    "warning": "Ne partagez pas ce code avec quiconque. Nous ne demanderons jamais ce code.",
+    "expiry": "Le code expire dans",
+    "questions": "Si vous n'avez pas demandé cela, veuillez ignorer cet e-mail et votre mot de passe restera inchangé."
+  },
+  "change_email": {
+    "title": "Confirmez votre changement d'e-mail",
+    "greeting": "Bonjour",
+    "message": "Vous avez demandé à modifier votre adresse e-mail. Veuillez confirmer cette action en cliquant sur le lien ci-dessous.",
+    "new_email": "Nouvelle adresse e-mail",
+    "confirmation_required": "Cliquez sur le bouton ci-dessous pour confirmer votre nouvelle adresse e-mail:",
+    "confirm_button": "Confirmer le changement d'e-mail",
+    "warning": "Important",
+    "link_expiration": "Ce lien de confirmation expire dans 24 heures.",
+    "no_action_required": "Si vous n'avez pas demandé ce changement, veuillez ignorer cet e-mail et votre adresse e-mail restera inchangée."
+  },
+  "email_changed": {
+    "title": "E-mail modifié avec succès",
+    "greeting": "Bonjour",
+    "success_message": "Succès! Votre adresse e-mail a été modifiée avec succès.",
+    "confirmation_complete": "Votre demande de changement d'e-mail a été complétée et vérifiée.",
+    "details": "Détails du changement",
+    "previous_email": "E-mail précédent",
+    "new_email": "Nouvelle adresse e-mail",
+    "date": "Modifié le",
+    "security_note": "Note de sécurité: ",
+    "security_message": "Si vous n'avez pas effectué ce changement, veuillez contacter notre équipe d'assistance immédiatement.",
+    "view_account": "Afficher les paramètres du compte",
+    "questions_contact": "Si vous avez des questions, veuillez contacter notre",
+    "support": "équipe d'assistance"
+  },
+  "m2fa_otp": {
+    "title": "Votre code d'authentification à deux facteurs",
+    "greeting": "Bonjour",
+    "message": "Vous avez demandé un code d'authentification à deux facteurs. Utilisez le code ci-dessous pour vérifier votre identité:",
+    "expires_in": "Expire dans",
+    "minutes": "minutes",
+    "do_not_share": "Ne partagez pas ce code",
+    "warning_message": "Ce code est destiné à la sécurité de votre compte. Ne le partagez jamais avec quiconque, et nous ne le demanderons jamais.",
+    "alternative_method": "Si vous n'avez pas demandé ce code, vous pouvez ignorer cet e-mail en toute sécurité.",
+    "security_alert": "Alerte de sécurité",
+    "security_message": "Si cette tentative de connexion n'a pas été faite par vous, veuillez changer votre mot de passe immédiatement.",
+    "questions_contact": "Si vous avez des questions, veuillez contacter notre",
+    "support": "équipe d'assistance"
+  },
+  "footer": {
+    "regards": "Cordialement,",
+    "team": "L'équipe Taleb.tn"
   },
   "common": {
     "unsubscribe": "Se désabonner des e-mails",
-    "copyright": "© 2026 Taleb.tn. Tous les droits réservés."
-  }
+    "copyright": "Taleb.tn. Tous les droits réservés."
+  },
+  "footer_text": "Ceci est un message automatisé, veuillez ne pas répondre à cet e-mail.",
+  "all_rights_reserved": "Tous les droits réservés."
 }

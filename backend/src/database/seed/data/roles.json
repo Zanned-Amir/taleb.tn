@@ -1,0 +1,19 @@
+[
+  {
+    "name": "admin",
+    "permissions": [
+      "users:create",
+      "users:read",
+      "users:update",
+      "users:delete",
+      "roles:manage",
+      "permissions:manage",
+      "system:configure",
+      "logs:view"
+    ]
+  },
+  {
+    "name": "user",
+    "permissions": ["users:read", "users:update"]
+  }
+]
