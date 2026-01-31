@@ -33,6 +33,8 @@ import {
   UpdateUserSettingsDto,
   UpdateUserSettingsMeDto,
 } from './dto/update-settings.dto';
+import { OAuthProfile } from '../oauth/types/oauth-provider.interface';
+import { OAuthAccount } from '../oauth/entities/oauth_account.entity';
 
 @Injectable()
 export class UsersService {
@@ -537,5 +539,109 @@ export class UsersService {
 
     Object.assign(user.settings, dto);
     await this.userSettingsRepository.save(user.settings);
+  }
+
+  async createOAuthUser(profile: OAuthProfile) {
+    const queryRunner = this.dataSource.createQueryRunner();
+    await queryRunner.connect();
+    await queryRunner.startTransaction();
+
+    try {
+      const manager = queryRunner.manager;
+      const user = manager.create(User, {
+        email: profile.email,
+        full_name: profile.first_name + ' ' + profile.last_name,
+        is_verified: profile.email_verified || false,
+        password: '',
+      });
+
+      const savedUser = await manager.save(user);
+
+      const userSettings = manager.create(UserSettings, {
+        user_id: savedUser.id,
+        theme: SETTINGS_THEME.light,
+        language: SETTINGS_LANGUAGE.en,
+        notifications_enabled: false,
+      });
+
+      const role = await this.roleRepository
+        .createQueryBuilder('role')
+        .where('role.code = :code', { code: ROLE.user })
+        .getOne();
+
+      if (!role) {
+        throw new InternalServerErrorException(
+          `Default user role "${ROLE.user}" not found in database. Please ensure roles are seeded.`,
+        );
+      }
+
+      await manager
+        .createQueryBuilder()
+        .relation(User, 'roles')
+        .of(savedUser.id)
+        .add(role);
+
+      await manager.save(userSettings);
+
+      const oauthAccount = manager.create(OAuthAccount, {
+        user_id: savedUser.id,
+        provider: profile.provider,
+        provider_account_id: profile.provider_id,
+        provider_email: profile.email,
+        provider_data: profile.raw_data,
+        last_used_at: new Date(),
+      });
+
+      await manager.save(oauthAccount);
+
+      savedUser.oauth_accounts = [oauthAccount];
+
+      await manager.save(savedUser);
+
+      await queryRunner.commitTransaction();
+      return savedUser;
+    } catch (error) {
+      await queryRunner.rollbackTransaction();
+      throw new InternalServerErrorException(
+        `Failed to create user: ${error.message}`,
+      );
+    } finally {
+      await queryRunner.release();
+    }
+  }
+
+  async linkOAuthAccount(user_id: number, profile: OAuthProfile) {
+    const user = await this.userRepository.findOne({ where: { id: user_id } });
+    if (!user) {
+      throw new NotFoundException(`User with ID ${user_id} not found`);
+    }
+
+    const queryRunner = this.dataSource.createQueryRunner();
+    await queryRunner.connect();
+    await queryRunner.startTransaction();
+
+    try {
+      const manager = queryRunner.manager;
+      const oauthAccount = manager.create(OAuthAccount, {
+        user_id,
+        provider: profile.provider,
+        provider_account_id: profile.provider_id,
+        provider_email: profile.email,
+        provider_data: profile.raw_data,
+        last_used_at: new Date(),
+      });
+
+      await manager.save(oauthAccount);
+
+      await queryRunner.commitTransaction();
+      return oauthAccount;
+    } catch (error) {
+      await queryRunner.rollbackTransaction();
+      throw new InternalServerErrorException(
+        `Failed to link OAuth account: ${error.message}`,
+      );
+    } finally {
+      await queryRunner.release();
+    }
   }
 }

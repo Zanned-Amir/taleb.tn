@@ -17,6 +17,7 @@ import { RefreshToken } from 'src/modules/auth/entites/refresh-token.entity';
 import { M2FA } from 'src/modules/auth/entites/m2fa.entity';
 import { Token } from 'src/modules/auth/entites/token.entity';
 import { OtpToken } from 'src/modules/auth/entites/otp-token.entity';
+import { OAuthAccount } from 'src/modules/oauth/entities/oauth_account.entity';
 
 @Entity({
   name: 'users',
@@ -90,4 +91,11 @@ export class User extends NumericSoftDeleteEntity {
 
   @OneToMany(() => OtpToken, (otpToken) => otpToken.user)
   otp_tokens: OtpToken[];
+
+  @OneToMany(() => OAuthAccount, (oauth) => oauth.user, {
+    cascade: true,
+    eager: false,
+    onDelete: 'CASCADE',
+  })
+  oauth_accounts: OAuthAccount[];
 }

@@ -62,4 +62,86 @@ export const validationSchema = Joi.object({
   PASSWORD_REQUIRE_LOWERCASE: Joi.boolean().default(true),
   PASSWORD_REQUIRE_NUMBERS: Joi.boolean().default(true),
   PASSWORD_REQUIRE_SPECIAL_CHARS: Joi.boolean().default(false),
+
+  // Google OAuth configuration
+  GOOGLE_ENABLED: Joi.boolean().default(false),
+  GOOGLE_CLIENT_ID: Joi.string().when('GOOGLE_ENABLED', {
+    is: true,
+    then: Joi.required(),
+    otherwise: Joi.allow('').optional(),
+  }),
+  GOOGLE_CLIENT_SECRET: Joi.string().when('GOOGLE_ENABLED', {
+    is: true,
+    then: Joi.required(),
+    otherwise: Joi.allow('').optional(),
+  }),
+  GOOGLE_CALLBACK_URL: Joi.string().when('GOOGLE_ENABLED', {
+    is: true,
+    then: Joi.required(),
+    otherwise: Joi.allow('').optional(),
+  }),
+
+  // Facebook OAuth configuration
+  FACEBOOK_ENABLED: Joi.boolean().default(false),
+  FACEBOOK_APP_ID: Joi.string().when('FACEBOOK_ENABLED', {
+    is: true,
+    then: Joi.required(),
+    otherwise: Joi.allow('').optional(),
+  }),
+  FACEBOOK_APP_SECRET: Joi.string().when('FACEBOOK_ENABLED', {
+    is: true,
+    then: Joi.required(),
+    otherwise: Joi.allow('').optional(),
+  }),
+  FACEBOOK_CALLBACK_URL: Joi.string().when('FACEBOOK_ENABLED', {
+    is: true,
+    then: Joi.required(),
+    otherwise: Joi.allow('').optional(),
+  }),
+
+  // GitHub OAuth configuration
+  GITHUB_ENABLED: Joi.boolean().default(false),
+  GITHUB_CLIENT_ID: Joi.string().when('GITHUB_ENABLED', {
+    is: true,
+    then: Joi.required(),
+    otherwise: Joi.allow('').optional(),
+  }),
+  GITHUB_CLIENT_SECRET: Joi.string().when('GITHUB_ENABLED', {
+    is: true,
+    then: Joi.required(),
+    otherwise: Joi.allow('').optional(),
+  }),
+  GITHUB_CALLBACK_URL: Joi.string().when('GITHUB_ENABLED', {
+    is: true,
+    then: Joi.required(),
+    otherwise: Joi.allow('').optional(),
+  }),
+
+  // Apple OAuth configuration
+  APPLE_ENABLED: Joi.boolean().default(false),
+  APPLE_CLIENT_ID: Joi.string().when('APPLE_ENABLED', {
+    is: true,
+    then: Joi.required(),
+    otherwise: Joi.allow('').optional(),
+  }),
+  APPLE_TEAM_ID: Joi.string().when('APPLE_ENABLED', {
+    is: true,
+    then: Joi.required(),
+    otherwise: Joi.allow('').optional(),
+  }),
+  APPLE_KEY_ID: Joi.string().when('APPLE_ENABLED', {
+    is: true,
+    then: Joi.required(),
+    otherwise: Joi.allow('').optional(),
+  }),
+  APPLE_PRIVATE_KEY: Joi.string().when('APPLE_ENABLED', {
+    is: true,
+    then: Joi.required(),
+    otherwise: Joi.allow('').optional(),
+  }),
+  APPLE_CALLBACK_URL: Joi.string().when('APPLE_ENABLED', {
+    is: true,
+    then: Joi.required(),
+    otherwise: Joi.allow('').optional(),
+  }),
 });

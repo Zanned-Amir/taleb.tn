@@ -17,6 +17,7 @@ import { User } from '../users/entities/user.entity';
 import { UsersModule } from '../users/users.module';
 import { RedisModule } from '../redis/redis.module';
 import { AuthorizationGuard } from './guards/authorization.guard';
+import { AuthorizationService } from './services/authorization.service';
 import { JwtAuthGuard } from './guards/jwt-auth.guard';
 import { JwtRefreshAuthGuard } from './guards/jwt-refresh.guard';
 import { LocalAuthGuard } from './guards/local-auth.guard';
@@ -45,6 +46,7 @@ import { EMAIL_QUEUE } from '../email/types/email.types';
   controllers: [AuthController],
   providers: [
     AuthService,
+    AuthorizationService,
     LocalStrategy,
     JwtStrategy,
     JwtRefreshStrategy,
@@ -53,6 +55,11 @@ import { EMAIL_QUEUE } from '../email/types/email.types';
     JwtAuthGuard,
     AuthorizationGuard,
   ],
-  exports: [AuthService, JwtAuthGuard, AuthorizationGuard],
+  exports: [
+    AuthService,
+    AuthorizationService,
+    JwtAuthGuard,
+    AuthorizationGuard,
+  ],
 })
 export class AuthModule {}

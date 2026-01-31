@@ -4,6 +4,7 @@ import { AppService } from './app.service';
 import { UsersModule } from './modules/users/users.module';
 import { ConfigModule, ConfigService } from '@nestjs/config';
 import { validationSchema } from './config/env.config';
+import oauthConfig from './config/oauth.config';
 import { I18nModule, QueryResolver, AcceptLanguageResolver } from 'nestjs-i18n';
 import { join } from 'path';
 import { TypeOrmModule } from '@nestjs/typeorm';
@@ -26,12 +27,15 @@ import { APP_GUARD } from '@nestjs/core';
 import { GlobalGuard } from './common/guards/global.guard';
 import { CommonModule } from './common/common.module';
 import { BullModule } from '@nestjs/bullmq';
+import { OauthModule } from './modules/oauth/oauth.module';
+import { OAuthAccount } from './modules/oauth/entities/oauth_account.entity';
 
 @Module({
   imports: [
     ConfigModule.forRoot({
       isGlobal: true,
       validationSchema,
+      load: [oauthConfig],
       validationOptions: {
         allowUnknown: true,
         abortEarly: false,
@@ -72,6 +76,7 @@ import { BullModule } from '@nestjs/bullmq';
             RefreshToken,
             OtpToken,
             M2FA,
+            OAuthAccount,
           ],
           synchronize:
             configService.getOrThrow<string>('NODE_ENV') !== 'production',
@@ -109,6 +114,7 @@ import { BullModule } from '@nestjs/bullmq';
     AuthModule,
     SessionsModule,
     RedisModule,
+    OauthModule,
     CommonModule,
   ],
   controllers: [AppController],
