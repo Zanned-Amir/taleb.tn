@@ -1,13 +1,16 @@
 // activty-log action types
 
-export const RESOURCE = {
+export const RESSOURCE = {
   user: 'user',
   role: 'role',
   session: 'session',
+  oauth_account: 'oauth_account',
   me: 'me',
+  m2fa: 'm2fa',
+  auth_settings: 'auth_settings',
 } as const;
 
-export type Resource = (typeof RESOURCE)[keyof typeof RESOURCE];
+export type Resource = (typeof RESSOURCE)[keyof typeof RESSOURCE];
 
 export const ACTION = {
   create: 'create',
@@ -18,6 +21,7 @@ export const ACTION = {
   unsuspend: 'unsuspend',
   assign_role: 'assign_role',
   remove_role: 'remove_role',
+  restore: 'restore',
 } as const;
 
 export type Action = (typeof ACTION)[keyof typeof ACTION];

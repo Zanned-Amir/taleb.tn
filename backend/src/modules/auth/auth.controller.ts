@@ -47,6 +47,8 @@ import { SendChangeEmailDto } from './dto/send-change-email.dto';
 import { ConfirmChangeEmailDto } from './dto/change-email.dto';
 import { UpdateUserSettingsMeDto } from '../users/dto/update-settings.dto';
 import { changePasswordDto } from './dto/change-password.dto';
+import { Permissions } from 'src/common/decorator/permissions.decorator';
+import { ACTION, RESSOURCE } from './types/auth.types';
 @Controller('auth')
 export class AuthController {
   constructor(private readonly authService: AuthService) {}
@@ -153,6 +155,9 @@ export class AuthController {
 
   // Change Password endpoint
 
+  @Permissions([
+    { resource: RESSOURCE.auth_settings, actions: [ACTION.update] },
+  ])
   @Post('change-password')
   async changePassword(
     @CurrentUser() user: User,
@@ -239,6 +244,7 @@ export class AuthController {
   // m2fa  endpoints
 
   // Set m2fa authentication method endpoint
+  @Permissions([{ resource: RESSOURCE.m2fa, actions: [ACTION.update] }])
   @Post('m2fa/setup-m2fa')
   async setupM2FA(
     @CurrentUser() user: User,
@@ -299,6 +305,7 @@ export class AuthController {
   }
 
   // Disable m2fa endpoint
+  @Permissions([{ resource: RESSOURCE.m2fa, actions: [ACTION.update] }])
   @Post('m2fa/enable-m2fa')
   async enableM2FA(
     @CurrentUser() user: User,
@@ -315,6 +322,7 @@ export class AuthController {
   }
 
   // Disable m2fa
+  @Permissions([{ resource: RESSOURCE.m2fa, actions: [ACTION.update] }])
   @Post('m2fa/disable-m2fa')
   async disableM2FA(
     @CurrentUser() user: User,
@@ -331,17 +339,22 @@ export class AuthController {
     );
   }
 
+  @Permissions([{ resource: RESSOURCE.me, actions: [ACTION.read] }])
   @Get('me')
   async me(@CurrentUser() user: User, @Query() include: OptionUserDto) {
     return await this.authService.me(user.id, include);
   }
 
+  @Permissions([{ resource: RESSOURCE.me, actions: [ACTION.update] }])
   @Patch('me')
   async updateProfile(@CurrentUser() user: User, @Body() dto: UpdateUserMeDto) {
     return await this.authService.updateMe(user.id, dto);
   }
 
   // Change Email endpoints
+  @Permissions([
+    { resource: RESSOURCE.auth_settings, actions: [ACTION.update] },
+  ])
   @Post('me/send-change-email')
   async sendChangeEmail(
     @CurrentUser() user: User,
@@ -355,24 +368,30 @@ export class AuthController {
   }
 
   // Confirm Change Email endpoint
+  @Permissions([
+    { resource: RESSOURCE.auth_settings, actions: [ACTION.update] },
+  ])
   @Post('me/confirm-change-email')
   async confirmChangeEmail(@Body() dto: ConfirmChangeEmailDto) {
     return await this.authService.changeEmail(dto.token);
   }
 
   // delete account ( soft delete after 14 days  it will be permanently deleted )
+  @Permissions([{ resource: RESSOURCE.me, actions: [ACTION.delete] }])
   @Delete('me/delete-account')
   async deleteAccount(@CurrentUser() user: User) {
     return await this.authService.SoftDeleteMe(user.id);
   }
 
   // restore soft deleted account
+  @Permissions([{ resource: RESSOURCE.me, actions: [ACTION.restore] }])
   @Post('me/restore-account')
   async restoreAccount(@CurrentUser() user: User) {
     return await this.authService.restoreMe(user.id);
   }
 
   // update user settings
+  @Permissions([{ resource: RESSOURCE.me, actions: [ACTION.update] }])
   @Patch('me/settings')
   async updateMySettings(
     @CurrentUser() user: User,

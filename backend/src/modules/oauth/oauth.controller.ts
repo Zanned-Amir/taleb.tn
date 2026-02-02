@@ -29,26 +29,36 @@ import { Public } from 'src/common/decorator/public.decorator';
 import { CurrentUser } from 'src/common/decorator/current-user.decorator';
 import { GetSessionData } from 'src/common/decorator/session-data.decorator';
 import { GetOAuthProfile } from 'src/common/decorator/oauth-profile.decorator';
+import { Permissions } from 'src/common/decorator/permissions.decorator';
+import { ACTION, RESSOURCE } from '../auth/types/auth.types';
 @Controller('oauth')
 export class OauthController {
   constructor(private readonly oauthService: OauthService) {}
   // General OAuth Endpoints
 
+  @Permissions([{ resource: RESSOURCE.oauth_account, actions: [ACTION.read] }])
   @Get('accounts')
   async getOAuthAccounts(@Paginate() query: PaginateQuery) {
     return await this.oauthService.getOAuthAccount(query);
   }
 
+  @Permissions([{ resource: RESSOURCE.oauth_account, actions: [ACTION.read] }])
   @Get('accounts/:id')
   async getOAuthAccountById(@Param('id', ParseIntPipe) id: number) {
     return await this.oauthService.getOAuthAccountById(id);
   }
 
+  @Permissions([
+    { resource: RESSOURCE.oauth_account, actions: [ACTION.delete] },
+  ])
   @Post('accounts/:id/delete')
   async deleteOAuthAccount(@Param('id', ParseIntPipe) id: number) {
     return await this.oauthService.deleteOAuthAccount(id);
   }
 
+  @Permissions([
+    { resource: RESSOURCE.oauth_account, actions: [ACTION.update] },
+  ])
   @Patch('accounts/:id')
   async updateOAuthAccount(
     @Param('id', ParseIntPipe) id: number,
@@ -88,6 +98,13 @@ export class OauthController {
     );
   }
 
+  @Permissions([
+    { resource: RESSOURCE.oauth_account, actions: [ACTION.update] },
+    {
+      resource: RESSOURCE.me,
+      actions: [ACTION.update],
+    },
+  ])
   @Get('google/link')
   async googleLink(@CurrentUser() user: User) {
     return await this.oauthService.linkOAuthAccount(
@@ -96,6 +113,13 @@ export class OauthController {
     );
   }
 
+  @Permissions([
+    { resource: RESSOURCE.oauth_account, actions: [ACTION.update] },
+    {
+      resource: RESSOURCE.me,
+      actions: [ACTION.update],
+    },
+  ])
   @Post('google/unlink')
   async googleUnlink(@CurrentUser() user: User) {
     return await this.oauthService.unlinkOAuthAccount(
@@ -133,7 +157,13 @@ export class OauthController {
       oauth_profile,
     );
   }
-
+  @Permissions([
+    { resource: RESSOURCE.oauth_account, actions: [ACTION.update] },
+    {
+      resource: RESSOURCE.me,
+      actions: [ACTION.update],
+    },
+  ])
   @Get('facebook/link')
   async facebookLink(@CurrentUser() user: User) {
     return await this.oauthService.linkOAuthAccount(
@@ -142,6 +172,13 @@ export class OauthController {
     );
   }
 
+  @Permissions([
+    { resource: RESSOURCE.oauth_account, actions: [ACTION.update] },
+    {
+      resource: RESSOURCE.me,
+      actions: [ACTION.update],
+    },
+  ])
   @Post('facebook/unlink')
   async facebookUnlink(@CurrentUser() user: User) {
     return await this.oauthService.unlinkOAuthAccount(
@@ -179,6 +216,13 @@ export class OauthController {
     );
   }
 
+  @Permissions([
+    { resource: RESSOURCE.oauth_account, actions: [ACTION.update] },
+    {
+      resource: RESSOURCE.me,
+      actions: [ACTION.update],
+    },
+  ])
   @Get('github/link')
   async githubLink(@CurrentUser() user: User) {
     return await this.oauthService.linkOAuthAccount(
@@ -187,6 +231,13 @@ export class OauthController {
     );
   }
 
+  @Permissions([
+    { resource: RESSOURCE.oauth_account, actions: [ACTION.update] },
+    {
+      resource: RESSOURCE.me,
+      actions: [ACTION.update],
+    },
+  ])
   @Post('github/unlink')
   async githubUnlink(@CurrentUser() user: User) {
     return await this.oauthService.unlinkOAuthAccount(

@@ -6,6 +6,7 @@ export const SESSION_REVOC_R = {
   suspicious_activity: 'suspicious_activity',
   password_reset: 'password_reset',
   email_change: 'email_change',
+  user_request: 'user_request',
 } as const;
 
 export type SessionRevokeReason =

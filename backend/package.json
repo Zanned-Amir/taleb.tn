@@ -21,7 +21,12 @@
     "seed": "ts-node -r tsconfig-paths/register src/database/seed/index.ts seed",
     "seed:list-roles": "ts-node -r tsconfig-paths/register src/database/seed/index.ts list-roles",
     "seed:list-users": "ts-node -r tsconfig-paths/register src/database/seed/index.ts list-users",
-    "seed:update-role": "ts-node -r tsconfig-paths/register src/database/seed/index.ts update-role"
+    "seed:update-role": "ts-node -r tsconfig-paths/register src/database/seed/index.ts update-role",
+    "migration:generate": "ts-node -r tsconfig-paths/register ./node_modules/typeorm/cli.js -d src/database/datasource.ts migration:generate",
+    "migration:create": "ts-node -r tsconfig-paths/register ./node_modules/typeorm/cli.js -d src/database/datasource.ts migration:create",
+    "migration:run": "ts-node -r tsconfig-paths/register ./node_modules/typeorm/cli.js -d src/database/datasource.ts migration:run",
+    "migration:revert": "ts-node -r tsconfig-paths/register ./node_modules/typeorm/cli.js -d src/database/datasource.ts migration:revert",
+    "migration:show": "ts-node -r tsconfig-paths/register ./node_modules/typeorm/cli.js -d src/database/datasource.ts migration:show"
   },
   "dependencies": {
     "@nestjs/bullmq": "^11.0.4",
@@ -60,7 +65,8 @@
     "reflect-metadata": "^0.2.2",
     "request-ip": "^3.3.0",
     "rxjs": "^7.8.1",
-    "speakeasy": "^2.0.0"
+    "speakeasy": "^2.0.0",
+    "typeorm": "^0.3.28"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3.2.0",

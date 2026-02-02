@@ -3,7 +3,8 @@ import { InjectRepository } from '@nestjs/typeorm';
 import { Session } from './entities/session.entity';
 import { paginate, PaginateQuery } from 'nestjs-paginate';
 import { sessionPaginationConfig } from './pagination/session.pagination';
-
+import { Not, In } from 'typeorm';
+import { SESSION_REVOC_R } from './types/session.types';
 @Injectable()
 export class SessionsService {
   constructor(@InjectRepository(Session) private sessionRepository) {}
@@ -71,6 +72,18 @@ export class SessionsService {
     session.revoked_at = new Date();
     await this.sessionRepository.save(session);
     return session;
+  }
+
+  async revokeALLMySessions(user_id: number, current_session_id: number) {
+    await this.sessionRepository.update(
+      { user_id, id: Not(current_session_id) },
+      {
+        is_active: false,
+        revoked_at: new Date(),
+        revoke_reason: SESSION_REVOC_R.user_request,
+      },
+    );
+    return true;
   }
 
   async deleteSessionById(id: number) {
