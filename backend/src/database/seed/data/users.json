@@ -3,7 +3,6 @@
     "email": "admin@example.com",
     "password": "Admin@123456",
     "full_name": "Admin User",
-    "phone_number": "+1234567890",
     "is_verified": true,
     "status": "active",
     "roles": ["admin"]
@@ -12,7 +11,6 @@
     "email": "user@example.com",
     "password": "User@123456",
     "full_name": "Regular User",
-    "phone_number": "+1122334455",
     "is_verified": true,
     "status": "active",
     "roles": ["user"]

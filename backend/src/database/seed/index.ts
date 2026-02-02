@@ -78,8 +78,9 @@ export class DatabaseSeeder {
   /**
    * Seed users with their roles
    * Creates new users if they don't exist
+   * Skips existing users unless --force flag is passed
    */
-  async seedUsers(): Promise<void> {
+  async seedUsers(forceUpdate: boolean = false): Promise<void> {
     console.log('🌱 Starting user seeding...');
     const userRepository = this.dataSource.getRepository(User);
     const roleRepository = this.dataSource.getRepository(Role);
@@ -93,15 +94,20 @@ export class DatabaseSeeder {
       });
 
       if (existingUser) {
-        // User exists - update roles and other fields if needed
-        if (userData.roles && userData.roles.length > 0) {
-          const roles = await roleRepository.find({
-            where: userData.roles.map((roleName) => ({ name: roleName })),
-          });
-          existingUser.roles = roles;
-          await userRepository.save(existingUser);
+        if (forceUpdate) {
+          // Force update: update roles and other fields
+          if (userData.roles && userData.roles.length > 0) {
+            const roles = await roleRepository.find({
+              where: userData.roles.map((roleName) => ({ name: roleName })),
+            });
+            existingUser.roles = roles;
+            await userRepository.save(existingUser);
+            console.log(`🔄 Force updated user: ${userData.email}`);
+          }
+        } else {
+          // Skip existing user
+          console.log(`⏭️  Skipping existing user: ${userData.email}`);
         }
-        console.log(`✅ Updated user: ${userData.email}`);
       } else {
         // Create new user
         const hashedPassword = await bcrypt.hash(
@@ -150,15 +156,20 @@ export class DatabaseSeeder {
 
   /**
    * Run all seeds
+   * @param forceUpdateUsers - If true, updates existing users. Default is false (skip existing)
    */
-  async run(): Promise<void> {
+  async run(forceUpdateUsers: boolean = false): Promise<void> {
     try {
       console.log('\n========================================');
       console.log('   🚀 DATABASE SEEDING STARTED');
       console.log('========================================\n');
 
+      if (forceUpdateUsers) {
+        console.log('⚠️  Force update mode: existing users WILL be updated\n');
+      }
+
       await this.seedRoles();
-      await this.seedUsers();
+      await this.seedUsers(forceUpdateUsers);
 
       console.log('========================================');
       console.log('   ✅ DATABASE SEEDING COMPLETED');
@@ -290,18 +301,19 @@ if (require.main === module) {
     entities: ['src/modules/**/*.entity.ts', 'src/modules/**/*.entity.js'],
     migrations: ['src/migrations/*.ts', 'src/migrations/*.js'],
     synchronize: false,
-    logging: true,
+    logging: false,
   });
 
   AppDataSource.initialize()
     .then(async (dataSource) => {
       const seeder = new DatabaseSeeder(dataSource);
       const command = process.argv[2];
+      const forceFlag = process.argv.includes('--force');
 
       try {
         switch (command) {
           case 'seed':
-            await seeder.run();
+            await seeder.run(forceFlag);
             break;
           case 'list-roles':
             await seeder.listRoles();
@@ -318,14 +330,19 @@ if (require.main === module) {
             break;
           default:
             console.log(`
-Usage: npx ts-node src/database/seed/index.ts <command>
+Usage: npx ts-node src/database/seed/index.ts <command> [options]
 
 Commands:
   seed                              - Run full database seed (roles & users)
+                                     Options: --force (force update existing users)
   list-roles                        - List all available roles and permissions
   list-users                        - List all seeded users and their roles
   update-role <name> <permissions>  - Add permissions to a role
                                      Example: npx ts-node src/database/seed/index.ts update-role admin "users:delete,logs:delete"
+
+Examples:
+  npm run seed                      - Seed: skip existing users
+  npm run seed -- --force           - Seed: force update existing users
             `);
         }
       } finally {

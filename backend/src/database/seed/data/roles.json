@@ -6,6 +6,18 @@
       "users:read",
       "users:update",
       "users:delete",
+      "users:restore",
+      "users:suspend",
+      "users:unsuspend",
+      "sessions:read",
+      "sessions:delete",
+      "m2fa:update",
+      "me:read",
+      "me:update",
+      "me:delete",
+      "me:restore",
+      "auth_settings:update",
+      "oauth_account:read",
       "roles:manage",
       "permissions:manage",
       "system:configure",
@@ -14,6 +26,18 @@
   },
   {
     "name": "user",
-    "permissions": ["users:read", "users:update"]
+    "permissions": [
+      "users:read",
+      "users:update",
+      "sessions:read",
+      "sessions:delete",
+      "m2fa:update",
+      "me:read",
+      "me:update",
+      "me:delete",
+      "me:restore",
+      "auth_settings:update",
+      "oauth_account:read"
+    ]
   }
 ]
