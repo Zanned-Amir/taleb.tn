@@ -1,0 +1,9 @@
+{
+  "common": {
+    "hello": "Morhba",
+    "welcome": "Ahla w sahla"
+  },
+  "LoginPage": {
+    "welcome": "Morhba f tatbiqna"
+  }
+}

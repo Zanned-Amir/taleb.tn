@@ -1,0 +1,9 @@
+{
+  "common": {
+    "hello": "Hello",
+    "welcome": "Welcome"
+  },
+  "LoginPage": {
+    "welcome": "Welcome to Our App"
+  }
+}
