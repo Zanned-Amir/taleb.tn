@@ -1,0 +1,5 @@
+{
+  "devDependencies": {
+    "@types/hark": "^1.2.5"
+  }
+}

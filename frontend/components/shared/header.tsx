@@ -12,23 +12,19 @@ export function Header({ hideAuthLinks = false }: HeaderProps) {
   const t = useTranslations("header");
 
   return (
-    <header className="bg-white shadow-sm sticky top-0 z-50">
+    <header className="bg-white shadow-sm sticky top-0 z-50 border-b-2 border-gray-200">
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3">
-        <div
-          className={`flex items-center h-16 ${hideAuthLinks ? "justify-center gap-12" : "justify-between"}`}
-        >
-          {/* Logo and Brand */}(
-          <div className="flex items-center gap-3">
+        <div className="flex items-center justify-between h-16">
+          {/* Logo and Brand - Always on the left */}
+          <div className="flex items-center gap-3 border-2 border-blue-600 rounded-lg px-4 py-2">
             <Logo size="sm" src="/logo.png" alt="Taleb.tn" />
-            <Link
-              href="/"
-              className="text-2xl font-bold text-blue-600 border-black"
-            >
+            <Link href="/" className="text-2xl font-bold text-blue-600">
               Taleb
             </Link>
           </div>
-          ){/* Navigation Links */}
-          <div className="hidden md:flex items-center gap-10">
+
+          {/* Navigation Links - Centered */}
+          <div className="hidden md:flex items-center gap-10 absolute left-1/2 transform -translate-x-1/2">
             <Link
               href="/"
               className="text-base font-semibold text-gray-700 hover:text-blue-600 transition"
@@ -54,7 +50,8 @@ export function Header({ hideAuthLinks = false }: HeaderProps) {
               {t("contact")}
             </Link>
           </div>
-          {/* Auth Links */}
+
+          {/* Auth Links - Always on the right */}
           {!hideAuthLinks && (
             <div className="flex items-center gap-4">
               <Link
