@@ -102,12 +102,12 @@ export function LoginForm() {
               {t("keepSignedIn")}
             </span>
           </label>
-          <a
-            href="#"
+          <Link
+            href="/verify-otp?type=password-reset"
             className="text-blue-500 hover:text-blue-700 hover:underline transition"
           >
             {t("forgotPassword")}
-          </a>
+          </Link>
         </div>
 
         <Button

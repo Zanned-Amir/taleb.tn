@@ -4,20 +4,20 @@
     "welcome": "Welcome"
   },
   "LoginPage": {
-    "welcome": "Welcome to Taleb.tn",
+    "welcome": "Welcome to Taleb",
     "loginButton": "Log In"
   },
   "welcome": {
-    "companyName": "Taleb.tn",
+    "companyName": "Taleb",
     "greeting": "Nice to see you again",
     "title": "WELCOME BACK",
-    "description": "Taleb.tn is the ultimate learning platform designed for Tunisian students. Access comprehensive resources, interactive lessons, and expert guidance to excel in your studies."
+    "description": "Taleb is the ultimate learning platform designed for Tunisian students. Access comprehensive resources, interactive lessons, and expert guidance to excel in your studies."
   },
   "welcomeRegister": {
-    "companyName": "Taleb.tn",
+    "companyName": "Taleb",
     "greeting": "Welcome to our community",
     "title": "JOIN US TODAY",
-    "description": "Start your learning journey with Taleb.tn, the premier educational platform for Tunisian students. Unlock thousands of resources, interactive lessons, and personalized guidance to achieve your academic goals."
+    "description": "Start your learning journey with Taleb, the premier educational platform for Tunisian students. Unlock thousands of resources, interactive lessons, and personalized guidance to achieve your academic goals."
   },
   "login": {
     "title": "Login Account",
@@ -65,7 +65,7 @@
     "privacy": "Privacy Policy",
     "terms": "Terms of Service",
     "cookies": "Cookie Policy",
-    "copyright": "© 2026 Taleb.tn. All rights reserved.",
+    "copyright": "© 2026 Taleb All rights reserved.",
     "followUs": "Follow Us",
     "poweredBy": "Powered by"
   },
@@ -105,6 +105,45 @@
       "confirmPasswordRequired": "Please confirm your password",
       "passwordMismatch": "Passwords do not match",
       "acceptTermsRequired": "You must accept the terms and conditions"
+    }
+  },
+  "verifyOTP": {
+    "title": "Verify Code",
+    "subtitle": "Enter the verification code sent to your email",
+    "emailLabel": "Email Address",
+    "emailPlaceholder": "Enter your email",
+    "otpLabel": "Verification Code",
+    "otpPlaceholder": "Enter 6-digit code",
+    "otpHint": "Check your email for the 6-digit verification code",
+    "sendOTP": "Send Code",
+    "sending": "Sending...",
+    "verify": "Verify",
+    "verifying": "Verifying...",
+    "sentTo": "Verification code sent to",
+    "changeEmail": "Use different email",
+    "didNotReceive": "Didn't receive the code?",
+    "resendOTP": "Resend Code",
+    "verificationFailed": "Verification failed. Please try again.",
+    "sendFailed": "Failed to send OTP. Please try again.",
+    "error": "An error occurred. Please try again.",
+    "backToLogin": "Back to",
+    "loginLink": "Login",
+    "errors": {
+      "invalidEmail": "Please enter a valid email address",
+      "otpLength": "OTP must be 6 digits",
+      "otpNumeric": "OTP must contain only numbers"
+    },
+    "emailVerification": {
+      "title": "Verify Your Email",
+      "subtitle": "We've sent a verification code to your email. Please enter it below to complete your registration."
+    },
+    "passwordReset": {
+      "title": "Reset Your Password",
+      "subtitle": "We've sent a verification code to your email. Enter it to proceed with resetting your password."
+    },
+    "m2fa": {
+      "title": "Two-Factor Authentication",
+      "subtitle": "For security, please enter the verification code sent to your email."
     }
   }
 }

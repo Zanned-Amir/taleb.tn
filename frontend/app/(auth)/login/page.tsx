@@ -1,6 +1,6 @@
-import { LoginForm } from "@/app/components/LoginForm";
-import { WelcomePanel } from "@/app/components/WelcomePanel";
-import { Card } from "@/app/components/ui/card";
+import { LoginForm } from "@/components/LoginForm";
+import { WelcomePanel } from "@/components/WelcomePanel";
+import { Card } from "@/components/ui/card";
 
 export default function Login() {
   return (

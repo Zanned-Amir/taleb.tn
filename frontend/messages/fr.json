@@ -7,16 +7,16 @@
     "welcome": "Bienvenue sur Notre App"
   },
   "welcome": {
-    "companyName": "Taleb.tn",
+    "companyName": "Taleb",
     "greeting": "Ravi de te revoir",
     "title": "BIENVENUE",
-    "description": "Taleb.tn est la plateforme d'apprentissage ultime conçue pour les étudiants tunisiens. Accédez à des ressources complètes, des leçons interactives et des conseils d'experts pour exceller dans vos études."
+    "description": "Taleb est la plateforme d'apprentissage ultime conçue pour les étudiants tunisiens. Accédez à des ressources complètes, des leçons interactives et des conseils d'experts pour exceller dans vos études."
   },
   "welcomeRegister": {
-    "companyName": "Taleb.tn",
+    "companyName": "Taleb",
     "greeting": "Bienvenue dans notre communauté",
     "title": "REJOIGNEZ-NOUS AUJOURD'HUI",
-    "description": "Commencez votre parcours d'apprentissage avec Taleb.tn, la plateforme éducative de premier plan pour les étudiants tunisiens. Débloquez des milliers de ressources, des leçons interactives et des conseils personnalisés pour atteindre vos objectifs académiques."
+    "description": "Commencez votre parcours d'apprentissage avec Taleb, la plateforme éducative de premier plan pour les étudiants tunisiens. Débloquez des milliers de ressources, des leçons interactives et des conseils personnalisés pour atteindre vos objectifs académiques."
   },
   "login": {
     "title": "Connexion",
@@ -64,7 +64,7 @@
     "privacy": "Politique de confidentialité",
     "terms": "Conditions d'utilisation",
     "cookies": "Politique relative aux cookies",
-    "copyright": "© 2026 Taleb.tn. Tous droits réservés.",
+    "copyright": "© 2026 Taleb Tous droits réservés.",
     "followUs": "Suivez-nous",
     "poweredBy": "Propulsé par"
   },
@@ -104,6 +104,45 @@
       "confirmPasswordRequired": "Veuillez confirmer votre mot de passe",
       "passwordMismatch": "Les mots de passe ne correspondent pas",
       "acceptTermsRequired": "Vous devez accepter les conditions et confidentialité"
+    }
+  },
+  "verifyOTP": {
+    "title": "Vérifier le Code",
+    "subtitle": "Entrez le code de vérification envoyé à votre email",
+    "emailLabel": "Adresse e-mail",
+    "emailPlaceholder": "Entrez votre email",
+    "otpLabel": "Code de Vérification",
+    "otpPlaceholder": "Entrez le code à 6 chiffres",
+    "otpHint": "Vérifiez votre email pour le code de vérification à 6 chiffres",
+    "sendOTP": "Envoyer le Code",
+    "sending": "Envoi...",
+    "verify": "Vérifier",
+    "verifying": "Vérification...",
+    "sentTo": "Code de vérification envoyé à",
+    "changeEmail": "Utiliser un autre email",
+    "didNotReceive": "Vous n'avez pas reçu le code?",
+    "resendOTP": "Renvoyer le Code",
+    "verificationFailed": "La vérification a échoué. Veuillez réessayer.",
+    "sendFailed": "Échec de l'envoi du code OTP. Veuillez réessayer.",
+    "error": "Une erreur s'est produite. Veuillez réessayer.",
+    "backToLogin": "Retour à",
+    "loginLink": "Connexion",
+    "errors": {
+      "invalidEmail": "Veuillez entrer une adresse email valide",
+      "otpLength": "Le code OTP doit être composé de 6 chiffres",
+      "otpNumeric": "Le code OTP doit contenir uniquement des chiffres"
+    },
+    "emailVerification": {
+      "title": "Vérifier Votre Email",
+      "subtitle": "Nous avons envoyé un code de vérification à votre email. Veuillez l'entrer ci-dessous pour compléter votre inscription."
+    },
+    "passwordReset": {
+      "title": "Réinitialiser Votre Mot de Passe",
+      "subtitle": "Nous avons envoyé un code de vérification à votre email. Entrez-le pour procéder à la réinitialisation de votre mot de passe."
+    },
+    "m2fa": {
+      "title": "Authentification à Deux Facteurs",
+      "subtitle": "Pour des raisons de sécurité, veuillez entrer le code de vérification envoyé à votre email."
     }
   }
 }

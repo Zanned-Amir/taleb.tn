@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useTranslations } from "next-intl";
-import { Logo } from "@/app/components/Logo";
+import { Logo } from "@/components/Logo";
 
 interface HeaderProps {
   hideAuthLinks?: boolean;
@@ -17,17 +17,17 @@ export function Header({ hideAuthLinks = false }: HeaderProps) {
         <div
           className={`flex items-center h-16 ${hideAuthLinks ? "justify-center gap-12" : "justify-between"}`}
         >
-          {/* Logo and Brand */}
-          {!hideAuthLinks && (
-            <div className="flex items-center gap-3">
-              <Logo size="sm" src="/logo.png" alt="Taleb.tn" />
-              <Link href="/" className="text-2xl font-bold text-blue-600">
-                Taleb.tn
-              </Link>
-            </div>
-          )}
-
-          {/* Navigation Links */}
+          {/* Logo and Brand */}(
+          <div className="flex items-center gap-3">
+            <Logo size="sm" src="/logo.png" alt="Taleb.tn" />
+            <Link
+              href="/"
+              className="text-2xl font-bold text-blue-600 border-black"
+            >
+              Taleb
+            </Link>
+          </div>
+          ){/* Navigation Links */}
           <div className="hidden md:flex items-center gap-10">
             <Link
               href="/"
@@ -54,7 +54,6 @@ export function Header({ hideAuthLinks = false }: HeaderProps) {
               {t("contact")}
             </Link>
           </div>
-
           {/* Auth Links */}
           {!hideAuthLinks && (
             <div className="flex items-center gap-4">

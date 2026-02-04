@@ -1,6 +1,6 @@
-import { RegisterForm } from "@/app/components/RegisterForm";
-import { WelcomePanel } from "@/app/components/WelcomePanel";
-import { Card } from "@/app/components/ui/card";
+import { RegisterForm } from "@/components/RegisterForm";
+import { WelcomePanel } from "@/components/WelcomePanel";
+import { Card } from "@/components/ui/card";
 
 export default function Register() {
   return (
