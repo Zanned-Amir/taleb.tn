@@ -4,6 +4,106 @@
     "welcome": "Ahla w sahla"
   },
   "LoginPage": {
-    "welcome": "Morhba f tatbiqna"
+    "welcome": ""
+  },
+  "welcome": {
+    "companyName": "Taleb.tn",
+    "greeting": "يسعدنا رؤيتك مرة أخرى",
+    "title": "أهلا وسهلا",
+    "description": "Taleb.tn هو أفضل منصة تعليمية مصممة لطلبة تونس. وصول شامل لموارد تعليمية، دروس تفاعلية، وإرشادات من الخبراء لتحقيق التفوق الأكاديمي."
+  },
+  "welcomeRegister": {
+    "companyName": "Taleb.tn",
+    "greeting": "أهلا بك في مجتمعنا",
+    "title": "انضم إلينا اليوم",
+    "description": "ابدأ رحلة التعلم مع Taleb.tn، منصة التعليم الرائدة لطلاب تونس. اكتشف آلاف الموارد التعليمية والدروس التفاعلية والإرشادات المتخصصة لتحقيق أهدافك الأكاديمية."
+  },
+  "login": {
+    "title": "الدخول",
+    "subtitle": "سجل الدخول إلى حسابك للمتابعة",
+    "email": {
+      "placeholder": "عنوان البريد الإلكتروني"
+    },
+    "password": {
+      "placeholder": "كلمة المرور"
+    },
+    "keepSignedIn": "ابقني مسجل الدخول",
+    "forgotPassword": "هل نسيت كلمة المرور؟",
+    "submitButton": "تسجيل الدخول",
+    "loading": "جاري تسجيل الدخول...",
+    "noAccount": "ليس لديك حساب؟",
+    "signupLink": "اشترك",
+    "errors": {
+      "emailRequired": "البريد الإلكتروني مطلوب",
+      "invalidEmail": "يرجى إدخال عنوان بريد إلكتروني صحيح",
+      "passwordRequired": "كلمة المرور مطلوبة"
+    }
+  },
+  "header": {
+    "home": "الرئيسية",
+    "about": "عن",
+    "courses": "الدورات",
+    "contact": "اتصل بنا",
+    "login": "دخول",
+    "signup": "اشترك",
+    "poweredBy": "مدعوم من Meninx",
+    "followUs": "تابعنا"
+  },
+  "footer": {
+    "description": "أفضل منصة تعليمية مصممة لطلاب تونس للتفوق في دراستهم.",
+    "quickLinks": "روابط سريعة",
+    "resources": "الموارد",
+    "legal": "القانوني",
+    "home": "الرئيسية",
+    "courses": "الدورات",
+    "about": "عن",
+    "contact": "اتصل بنا",
+    "blog": "مدونة",
+    "faq": "الأسئلة الشائعة",
+    "support": "الدعم",
+    "privacy": "سياسة الخصوصية",
+    "terms": "شروط الخدمة",
+    "cookies": "سياسة ملفات تعريف الارتباط",
+    "copyright": "© 2026 Taleb.tn. جميع الحقوق محفوظة.",
+    "followUs": "تابعنا",
+    "poweredBy": "مدعوم من"
+  },
+  "register": {
+    "title": "إنشاء حساب",
+    "subtitle": "اشترك للانضمام إلى مجتمع التعلم لدينا",
+    "username": {
+      "placeholder": "اسم المستخدم"
+    },
+    "email": {
+      "placeholder": "عنوان البريد الإلكتروني"
+    },
+    "password": {
+      "placeholder": "كلمة المرور"
+    },
+    "confirmPassword": {
+      "placeholder": "تأكيد كلمة المرور"
+    },
+    "acceptTerms": {
+      "label": "أوافق على",
+      "terms": "شروط الخدمة",
+      "and": "و",
+      "privacy": "سياسة الخصوصية"
+    },
+    "submitButton": "إنشاء الحساب",
+    "loading": "جاري إنشاء الحساب...",
+    "haveAccount": "هل لديك حساب بالفعل؟",
+    "loginLink": "تسجيل الدخول",
+    "errors": {
+      "usernameRequired": "اسم المستخدم مطلوب",
+      "usernameMinLength": "يجب أن يكون اسم المستخدم 3 أحرف على الأقل",
+      "usernameMaxLength": "لا يمكن أن يتجاوز اسم المستخدم 20 حرفا",
+      "emailRequired": "البريد الإلكتروني مطلوب",
+      "invalidEmail": "يرجى إدخال عنوان بريد إلكتروني صحيح",
+      "passwordRequired": "كلمة المرور مطلوبة",
+      "passwordMinLength": "يجب أن تكون كلمة المرور 8 أحرف على الأقل",
+      "confirmPasswordRequired": "يرجى تأكيد كلمة المرور",
+      "passwordMismatch": "كلمات المرور غير متطابقة",
+      "acceptTermsRequired": "يجب عليك قبول الشروط والخصوصية"
+    }
   }
 }

@@ -5,5 +5,105 @@
   },
   "LoginPage": {
     "welcome": "Bienvenue sur Notre App"
+  },
+  "welcome": {
+    "companyName": "Taleb.tn",
+    "greeting": "Ravi de te revoir",
+    "title": "BIENVENUE",
+    "description": "Taleb.tn est la plateforme d'apprentissage ultime conçue pour les étudiants tunisiens. Accédez à des ressources complètes, des leçons interactives et des conseils d'experts pour exceller dans vos études."
+  },
+  "welcomeRegister": {
+    "companyName": "Taleb.tn",
+    "greeting": "Bienvenue dans notre communauté",
+    "title": "REJOIGNEZ-NOUS AUJOURD'HUI",
+    "description": "Commencez votre parcours d'apprentissage avec Taleb.tn, la plateforme éducative de premier plan pour les étudiants tunisiens. Débloquez des milliers de ressources, des leçons interactives et des conseils personnalisés pour atteindre vos objectifs académiques."
+  },
+  "login": {
+    "title": "Connexion",
+    "subtitle": "Connectez-vous à votre compte pour continuer",
+    "email": {
+      "placeholder": "Adresse e-mail"
+    },
+    "password": {
+      "placeholder": "Mot de passe"
+    },
+    "keepSignedIn": "Me garder connecté",
+    "forgotPassword": "Mot de passe oublié?",
+    "submitButton": "Se connecter",
+    "loading": "Connexion...",
+    "noAccount": "Vous n'avez pas de compte?",
+    "signupLink": "S'inscrire",
+    "errors": {
+      "emailRequired": "L'email est requis",
+      "invalidEmail": "Veuillez entrer une adresse email valide",
+      "passwordRequired": "Le mot de passe est requis"
+    }
+  },
+  "header": {
+    "home": "Accueil",
+    "about": "À propos",
+    "courses": "Cours",
+    "contact": "Contact",
+    "login": "Connexion",
+    "signup": "S'inscrire",
+    "poweredBy": "Propulsé par Meninx",
+    "followUs": "Suivez-nous"
+  },
+  "footer": {
+    "description": "La meilleure plateforme d'apprentissage conçue pour les étudiants tunisiens afin d'exceller dans leurs études.",
+    "quickLinks": "Liens Rapides",
+    "resources": "Ressources",
+    "legal": "Légal",
+    "home": "Accueil",
+    "courses": "Cours",
+    "about": "À propos",
+    "contact": "Contact",
+    "blog": "Blog",
+    "faq": "FAQ",
+    "support": "Support",
+    "privacy": "Politique de confidentialité",
+    "terms": "Conditions d'utilisation",
+    "cookies": "Politique relative aux cookies",
+    "copyright": "© 2026 Taleb.tn. Tous droits réservés.",
+    "followUs": "Suivez-nous",
+    "poweredBy": "Propulsé par"
+  },
+  "register": {
+    "title": "Créer un compte",
+    "subtitle": "S'inscrire pour rejoindre notre communauté d'apprentissage",
+    "username": {
+      "placeholder": "Nom d'utilisateur"
+    },
+    "email": {
+      "placeholder": "Adresse e-mail"
+    },
+    "password": {
+      "placeholder": "Mot de passe"
+    },
+    "confirmPassword": {
+      "placeholder": "Confirmer le mot de passe"
+    },
+    "acceptTerms": {
+      "label": "J'accepte les",
+      "terms": "Conditions d'utilisation",
+      "and": "et la",
+      "privacy": "Politique de confidentialité"
+    },
+    "submitButton": "S'inscrire",
+    "loading": "Création du compte...",
+    "haveAccount": "Vous avez déjà un compte?",
+    "loginLink": "Se connecter",
+    "errors": {
+      "usernameRequired": "Le nom d'utilisateur est requis",
+      "usernameMinLength": "Le nom d'utilisateur doit contenir au moins 3 caractères",
+      "usernameMaxLength": "Le nom d'utilisateur ne peut pas dépasser 20 caractères",
+      "emailRequired": "L'email est requis",
+      "invalidEmail": "Veuillez entrer une adresse email valide",
+      "passwordRequired": "Le mot de passe est requis",
+      "passwordMinLength": "Le mot de passe doit contenir au moins 8 caractères",
+      "confirmPasswordRequired": "Veuillez confirmer votre mot de passe",
+      "passwordMismatch": "Les mots de passe ne correspondent pas",
+      "acceptTermsRequired": "Vous devez accepter les conditions et confidentialité"
+    }
   }
 }
