@@ -1,7 +1,8 @@
 // activty-log action types
 
 export const RESSOURCE = {
-  user: 'user',
+  chat: 'chat',
+  users: 'users',
   role: 'role',
   session: 'session',
   oauth_account: 'oauth_account',

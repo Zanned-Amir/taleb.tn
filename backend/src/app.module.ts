@@ -29,6 +29,11 @@ import { CommonModule } from './common/common.module';
 import { BullModule } from '@nestjs/bullmq';
 import { OauthModule } from './modules/oauth/oauth.module';
 import { OAuthAccount } from './modules/oauth/entities/oauth_account.entity';
+import { MatchingGateway } from './modules/matching/matching.gateway';
+import { VideoChatGateway } from './modules/video-chat/video-chat.gateway';
+import { MatchingService } from './modules/matching/matching.service';
+import { MatchingModule } from './modules/matching/matching.module';
+import { VideoChatModule } from './modules/video-chat/video-chat.module';
 
 @Module({
   imports: [
@@ -116,15 +121,16 @@ import { OAuthAccount } from './modules/oauth/entities/oauth_account.entity';
     RedisModule,
     OauthModule,
     CommonModule,
+    MatchingModule,
+    VideoChatModule,
   ],
   controllers: [AppController],
   providers: [
+    AppService,
     {
       provide: APP_GUARD,
       useClass: GlobalGuard,
     },
-
-    AppService,
   ],
 })
 export class AppModule {}

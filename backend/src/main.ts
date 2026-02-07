@@ -13,6 +13,7 @@ import helmet from 'helmet';
 import cookieParser from 'cookie-parser';
 import { ResponseInterceptor } from './common/interceptors/response.interceptores';
 import { AllExceptionsFilter } from './common/filters/all-exceptions.filter';
+import { RedisIoAdapter } from './common/adapters/redis-io-adapter';
 declare const module: any;
 
 async function bootstrap() {
@@ -83,6 +84,12 @@ async function bootstrap() {
     );
   }
   app.useGlobalInterceptors(new ResponseInterceptor(configService));
+
+  // Setup Redis Adapter for WebSockets to enable horizontal scaling
+  const redisIoAdapter = new RedisIoAdapter(app);
+  await redisIoAdapter.connectToRedis();
+
+  app.useWebSocketAdapter(redisIoAdapter);
 
   app.useGlobalFilters(new AllExceptionsFilter(configService));
   app.use(cookieParser());

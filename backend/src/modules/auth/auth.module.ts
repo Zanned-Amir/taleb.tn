@@ -23,6 +23,7 @@ import { JwtRefreshAuthGuard } from './guards/jwt-refresh.guard';
 import { LocalAuthGuard } from './guards/local-auth.guard';
 import { BullModule } from '@nestjs/bullmq';
 import { EMAIL_QUEUE } from '../email/types/email.types';
+import { WsAuthorizationGuard } from './guards/ws-authorization.guard';
 
 @Module({
   imports: [
@@ -54,12 +55,15 @@ import { EMAIL_QUEUE } from '../email/types/email.types';
     JwtRefreshAuthGuard,
     JwtAuthGuard,
     AuthorizationGuard,
+    WsAuthorizationGuard,
   ],
   exports: [
     AuthService,
     AuthorizationService,
     JwtAuthGuard,
     AuthorizationGuard,
+    WsAuthorizationGuard,
+    JwtModule,
   ],
 })
 export class AuthModule {}
